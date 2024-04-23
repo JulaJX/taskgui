@@ -11,5 +11,11 @@ public class Manager extends Recepcjonista {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Manager{" +
+                "hisotriaZespolow=" + hisotriaZespolow +
+                ", historiaZadan=" + historiaZadan +
+                '}';
+    }
 }

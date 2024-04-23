@@ -7,11 +7,24 @@ public abstract class Pracownik implements Comparable<Pracownik>{
 
     private static List<Pracownik> listaPracownikow = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return "Pracownik{" +
+                "imie='" + imie + '\'' +
+                ", nazwisko='" + nazwisko + '\'' +
+                ", dataUrodzenia=" + dataUrodzenia +
+                ", dzial=" + dzial +
+                ", czyZdrowy=" + czyZdrowy +
+                '}';
+    }
+
     private String imie;
     private String nazwisko;
     private Date dataUrodzenia;
     private DzialPracownikow dzial;
     private boolean czyZdrowy = true;
+
+
 
     public Pracownik(String imie, String nazwisko, Date dataUrodzenia, DzialPracownikow dzial) {
         this.imie = imie;
@@ -20,8 +33,12 @@ public abstract class Pracownik implements Comparable<Pracownik>{
         this.dzial = dzial;
         listaPracownikow.add(this);
     }
+
     // Settery i gettery
 
+    public boolean isCzyZdrowy() {
+        return this.czyZdrowy;
+    }
     public void setImie(String imie) {
         this.imie = imie;
     }

@@ -6,6 +6,15 @@ public class Zespol {
     private Manager manager;
     private List<Pracownik> listaPracownikow;
 
+    @Override
+    public String toString() {
+        return "Zespol{" +
+                "nazwa='" + nazwa + '\'' +
+                ", manager=" + manager +
+                ", listaPracownikow=" + listaPracownikow +
+                '}';
+    }
+
     public Zespol(String nazwa, Manager manager, List<Pracownik> listaPracownikow) {
         this.nazwa = nazwa;
         this.manager = manager;

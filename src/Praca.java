@@ -16,6 +16,21 @@ public class Praca implements Runnable {
 
     @Override
     public void run() {
+        for(Map.Entry<Integer, Zadanie> entry : zadania.entrySet()){
+            Zadanie zadanie = entry.getValue();
 
+            if(zadanie.getStan() != Stan.UTWORZONE){
+                System.out.println("Zadanie " + zadanie.getName()
+                        + " nie może zostać rozpoczęte, ponieważ stan nie został utworzony");
+                return;
+            }
+
+            if (!this.zespol.czyWszyscyZdrowi()) {
+                System.out.println("Nie wszyscy pracownicy w zespole są zdrowi");
+                return;
+            }
+
+            zadanie.start();
+        }
     }
 }

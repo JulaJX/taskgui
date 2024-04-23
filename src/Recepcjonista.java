@@ -13,6 +13,15 @@ public class Recepcjonista extends Pracownik {
     }
 
     @Override
+    public String toString() {
+        return "Recepcjonista{" +
+                "login='" + login + '\'' +
+                ", haslo='" + haslo + '\'' +
+                ", inicjaly='" + inicjaly + '\'' +
+                '}';
+    }
+
+    @Override
     public void setImie(String imie) {
         super.setImie(imie);
         this.inicjaly =  "" + imie.charAt(0) + this.getNazwisko().charAt(0);
