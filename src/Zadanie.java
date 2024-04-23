@@ -9,15 +9,29 @@ public class Zadanie extends Thread {
     private LocalDateTime dataZakonczenia;
     private int czasWykonania = new Random().nextInt((8 - 3) + 3);
 
+    public Stan getStan() {
+        return this.stan;
+    }
 
+    @Override
+    public String toString() {
+        return "Zadanie{" +
+                "nazwa='" + nazwa + '\'' +
+                ", opis='" + opis + '\'' +
+                ", stan=" + stan +
+                ", dataUtworzenia=" + dataUtworzenia +
+                ", dataZakonczenia=" + dataZakonczenia +
+                ", czasWykonania=" + czasWykonania +
+                '}';
+    }
 
-
-//    nie ma pola zatwierdzenie chodzi o stan nie?
     public Zadanie(String nazwa, String opis, Stan stan) {
         this.nazwa = nazwa;
         this.opis = opis;
         this.stan = stan;
+        this.dataUtworzenia = LocalDateTime.now();
     }
+
     public Zadanie(String nazwa) {
         this.nazwa = nazwa;
         this.opis = "";

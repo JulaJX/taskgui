@@ -31,4 +31,14 @@ public class Zespol {
         listaPracownikow = listaPracownikow.stream().filter(pracownik -> pracownik instanceof Manager).toList();
         this.listaPracownikow.addAll(listaPracownikow);
     }
+
+    public boolean czyWszyscyZdrowi() {
+        for (Pracownik pracownik : listaPracownikow) {
+            if(!pracownik.isCzyZdrowy()) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
