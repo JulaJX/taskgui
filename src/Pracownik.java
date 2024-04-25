@@ -7,6 +7,18 @@ public abstract class Pracownik implements Comparable<Pracownik>{
 
     private static List<Pracownik> listaPracownikow = new ArrayList<>();
 
+    public static List<Pracownik> getListaPracownikow() {
+        return listaPracownikow;
+    }
+
+    public Date getDataUrodzenia() {
+        return dataUrodzenia;
+    }
+
+    public DzialPracownikow getDzial() {
+        return dzial;
+    }
+
     @Override
     public String toString() {
         return "Pracownik{" +
@@ -52,6 +64,8 @@ public abstract class Pracownik implements Comparable<Pracownik>{
     public String getNazwisko() {
         return nazwisko;
     }
+
+
 
     //Sprawdza imie i nazwisko jesli imie nie jest takie samo to nawet nie dochodzi do sprawdzania nazwiska
     @Override

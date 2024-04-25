@@ -42,10 +42,10 @@ public class Zadanie extends Thread {
     @Override
     public void run() {
         this.stan = Stan.ROZPOCZETE;
-        System.out.println("Wykonywanie zadania zostało rozpoczęte");
+        System.out.println("Wykonywanie Zadania "+this.nazwa+": zostało ROZPOCZĘTE");
 
         for (int i = 0; i < this.czasWykonania; i++) {
-            System.out.println("Mineło: " + i + " sekund od rozpoczęcia zadania");
+            System.out.println("Zadanie " + this.nazwa +": Mineło: " + i + " sekund od rozpoczęcia zadania");
             try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -53,7 +53,7 @@ public class Zadanie extends Thread {
                 }
         }
 
-        System.out.println("Zadanie zostało wykorzystane");
+        System.out.println("Zadanie " + this.nazwa +": zostało wykorzystane");
         this.dataZakonczenia = LocalDateTime.now();
         this.stan = Stan.ZAKONCZONE;
     }

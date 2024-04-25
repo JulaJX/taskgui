@@ -6,6 +6,10 @@ public class Zespol {
     private Manager manager;
     private List<Pracownik> listaPracownikow;
 
+    public Manager getManager() {
+        return manager;
+    }
+
     @Override
     public String toString() {
         return "Zespol{" +
@@ -19,7 +23,9 @@ public class Zespol {
         this.nazwa = nazwa;
         this.manager = manager;
         this.listaPracownikow = listaPracownikow;
+        this.manager.hisotriaZespolow.add(this);
     }
+
     public void dodajPracownikow(Pracownik pracownik){
         if (pracownik instanceof Manager) return;
 
@@ -27,7 +33,7 @@ public class Zespol {
     }
     public void dodajPracownikow( List<Pracownik> listaPracownikow){
         //  Funkcja lambda sprawdza czy pracownik jest instancja klasy Manager
-        //    pracownik -> pracownik instanceof Manager
+        //  pracownik -> pracownik instanceof Manager
         listaPracownikow = listaPracownikow.stream().filter(pracownik -> pracownik instanceof Manager).toList();
         this.listaPracownikow.addAll(listaPracownikow);
     }
