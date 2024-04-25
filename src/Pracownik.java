@@ -5,7 +5,7 @@ import java.util.List;
 
 public abstract class Pracownik implements Comparable<Pracownik>{
 
-    private static List<Pracownik> listaPracownikow = new ArrayList<>();
+    public static List<Pracownik> listaPracownikow = new ArrayList<>();
 
     public static List<Pracownik> getListaPracownikow() {
         return listaPracownikow;

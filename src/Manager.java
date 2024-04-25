@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class Manager extends Recepcjonista {
     UUID ID;
@@ -9,7 +10,7 @@ public class Manager extends Recepcjonista {
 
     public Manager(String imie, String nazwisko, Date dataUrodzenia, DzialPracownikow dzial) {
         super(imie, nazwisko, dataUrodzenia, dzial);
-
+        this.ID = UUID.randomUUID();
     }
 
     @Override
