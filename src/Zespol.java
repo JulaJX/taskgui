@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Zespol {
+    private int id;
     private String nazwa;
     private Manager manager;
     private List<Pracownik> listaPracownikow;
@@ -13,7 +14,8 @@ public class Zespol {
     @Override
     public String toString() {
         return "Zespol{" +
-                "nazwa='" + nazwa + '\'' +
+                "id=" + id +
+                ", nazwa='" + nazwa + '\'' +
                 ", manager=" + manager +
                 ", listaPracownikow=" + listaPracownikow +
                 '}';
@@ -24,6 +26,8 @@ public class Zespol {
         this.manager = manager;
         this.listaPracownikow = listaPracownikow;
         this.manager.hisotriaZespolow.add(this);
+        Main.count++;
+        this.id = Main.count;
     }
 
     public void dodajPracownikow(Pracownik pracownik){

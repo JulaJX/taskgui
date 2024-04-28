@@ -6,14 +6,26 @@ public class Praca implements Runnable {
     public static Praca pobierzPracePoID(int id) {
         return listaPrac.get(id);
     }
-
+    private int id;
     private String opis;
     private Zespol zespol;
     public Map<Integer, Zadanie> zadania = new HashMap<>();
 
+    @Override
+    public String toString() {
+        return "Praca{" +
+                "id=" + id +
+                ", opis='" + opis + '\'' +
+                ", zespol=" + zespol +
+                ", zadania=" + zadania +
+                '}';
+    }
+
     public Praca(String opis, Zespol zespol) {
         this.opis = opis;
         this.zespol = zespol;
+        Main.count++;
+        this.id = Main.count;
     }
 
     public void dodajZadanie(int key, Zadanie zadanie) {

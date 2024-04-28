@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class DzialPracownikow {
+    private int id;
     public String nazwa;
     static List<DzialPracownikow> listaDzialow = new ArrayList<>();
 
@@ -10,12 +11,15 @@ public class DzialPracownikow {
     @Override
     public String toString() {
         return "DzialPracownikow{" +
-                "nazwa='" + nazwa + '\'' +
+                "id=" + id +
+                ", nazwa='" + nazwa + '\'' +
                 '}';
     }
 
     public DzialPracownikow(String nazwa){
         this.nazwa = nazwa;
+        Main.count++;
+        this.id = Main.count;
     }
 
     public static DzialPracownikow createDzial(String nazwaDzialu) throws NotUniqueNameException {

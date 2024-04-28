@@ -2,10 +2,19 @@ import java.time.LocalDateTime;
 import java.util.Random;
 
 public class Zadanie extends Thread {
+    private int id;
     private String nazwa;
     private String opis;
     private Stan stan;
     private LocalDateTime dataUtworzenia;
+
+    public boolean isZatwierdzone() {
+        return zatwierdzone;
+    }
+    public void setZatwierdzone(boolean zatwierdzone) {
+        this.zatwierdzone = zatwierdzone;
+    }
+
     private LocalDateTime dataZakonczenia;
     private int czasWykonania = new Random().nextInt((8 - 3) + 3);
 
@@ -16,7 +25,8 @@ public class Zadanie extends Thread {
     @Override
     public String toString() {
         return "Zadanie{" +
-                "nazwa='" + nazwa + '\'' +
+                "id=" + id +
+                ", nazwa='" + nazwa + '\'' +
                 ", opis='" + opis + '\'' +
                 ", stan=" + stan +
                 ", dataUtworzenia=" + dataUtworzenia +
@@ -30,6 +40,8 @@ public class Zadanie extends Thread {
         this.opis = opis;
         this.stan = stan;
         this.dataUtworzenia = LocalDateTime.now();
+        Main.count++;
+        this.id = Main.count;
     }
 
     public Zadanie(String nazwa) {
@@ -37,6 +49,8 @@ public class Zadanie extends Thread {
         this.opis = "";
         this.stan = Stan.UTWORZONE;
         this.dataUtworzenia = LocalDateTime.now();
+        Main.count++;
+        this.id = Main.count;
     }
 
     @Override

@@ -22,7 +22,8 @@ public abstract class Pracownik implements Comparable<Pracownik>{
     @Override
     public String toString() {
         return "Pracownik{" +
-                "imie='" + imie + '\'' +
+                "id=" + id +
+                ", imie='" + imie + '\'' +
                 ", nazwisko='" + nazwisko + '\'' +
                 ", dataUrodzenia=" + dataUrodzenia +
                 ", dzial=" + dzial +
@@ -30,6 +31,7 @@ public abstract class Pracownik implements Comparable<Pracownik>{
                 '}';
     }
 
+    private int id;
     private String imie;
     private String nazwisko;
     private Date dataUrodzenia;
@@ -44,6 +46,8 @@ public abstract class Pracownik implements Comparable<Pracownik>{
         this.dataUrodzenia = dataUrodzenia;
         this.dzial = dzial;
         listaPracownikow.add(this);
+        Main.count++;
+        this.id = Main.count;
     }
 
     // Settery i gettery
