@@ -37,6 +37,8 @@ class Main {
 
             hotel.run();
 
+            System.out.println(pracownik1.imiePracownikaOdTylu());
+
             System.out.println(pracownik1.compareTo(recepcjosnita2));
             System.out.println(pracownik1.compareTo(kopia_pracownik1));
 

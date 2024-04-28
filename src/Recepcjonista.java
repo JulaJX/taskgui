@@ -4,6 +4,28 @@ public class Recepcjonista extends Pracownik {
     private String login, haslo;
     private String inicjaly;
 
+    @Override
+    public void powitajPracownika() {
+        System.out.println("Witaj " + getImie() + "!" );
+    }
+
+    @Override
+    public String imiePracownikaOdTylu() {
+        var imie = getImie();
+        char ch;
+        String revImie = "";
+        for (int i=0; i<imie.length(); i++)
+        {
+            ch = imie.charAt(i);
+            revImie = ch + revImie;
+        }
+        return revImie;
+    }
+
+    @Override
+    public void pozegnajPracownika() {
+        System.out.println("Żegnaj " + getImie() + "!" );
+    }
 
     public Recepcjonista(String imie, String nazwisko, Date dataUrodzenia, DzialPracownikow dzial) {
         super(imie, nazwisko, dataUrodzenia, dzial);
