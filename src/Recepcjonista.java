@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Recepcjonista extends Pracownik {
+public class Recepcjonista extends Pracownik implements IDobryPracownik {
     private String login, haslo;
     private String inicjaly;
 
