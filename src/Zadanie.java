@@ -6,6 +6,7 @@ public class Zadanie extends Thread {
     private String nazwa;
     private String opis;
     private Stan stan;
+    private boolean zatwierdzone = false;
     private LocalDateTime dataUtworzenia;
 
     public boolean isZatwierdzone() {
@@ -55,6 +56,13 @@ public class Zadanie extends Thread {
 
     @Override
     public void run() {
+
+        if (!this.zatwierdzone) {
+            System.out.println("Wykonwanie zadania: " + this.nazwa + " zostalo pominiente");
+            return;
+        }
+
+
         this.stan = Stan.ROZPOCZETE;
         System.out.println("Wykonywanie Zadania "+this.nazwa+": zostało ROZPOCZĘTE");
 

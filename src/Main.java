@@ -1,6 +1,7 @@
 import java.util.*;
 
 class Main {
+    public static int count = 0;
 
     public static void main(String args[]) {
         try {
@@ -25,7 +26,9 @@ class Main {
             Praca hotel = new Praca("Utrzymanie porządku w budynku",zespol);
 
             Zadanie zad1 = new Zadanie("Sprzątanie 1-piętra");
+            zad1.setZatwierdzone(true);
             Zadanie zad2 = new Zadanie("Czyszczenie garażu");
+            zad2.setZatwierdzone(true);
             Zadanie zad3 = new Zadanie("Obieg higieny kuchni");
 
             hotel.dodajZadanie(1, zad1);
